@@ -1,0 +1,14 @@
+# ERROR xxx REDIRECT URL
+ErrorDocument 404 /robotics_2022/layouts/404.php
+# ErrorDocument 500 /robotics_2022/layouts/500.php
+# Add '/robotics_2022' for local hosting
+
+# DEFAULT PAGE
+
+DirectoryIndex index.php home
+
+# REMOVE PHP EXTENSION
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
