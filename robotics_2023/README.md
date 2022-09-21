@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Grids
+---
+#### use of grid component
+To use the grid component, you need to pass a column parameter.
+```typescript
+let cols_temp = [
+    {
+        centered: true,
+        content: <div>
+            <h1>Title</h1>
+            <br />
+            <a href="http://linkexample">dummylink</a>
+        </div>
+    }
+]
+```
+Here you pass not only a centered parameter, but also a content parameter that is returning the html content of the grid component.
+
 
 ## Getting Started
 
