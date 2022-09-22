@@ -2,35 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Row from './components/Row'
-import {string} from "prop-types";
-import Col from "./components/Col";
 import Container from "./components/Container";
 
 const Home: NextPage = () => {
-    let cols_temp = [
-        {
-            centered: true,
-            content: "hello"
-        },
-        {
-            centered: true,
-            content: "hello"
-        },
-        {
-            centered: true,
-            content: "hello"
-        },
-    ];
-    let rows_temp = [
-        {
-            centered: true,
-            content: "hello"
-        }
-    ];
-    cols_temp.forEach((e)=>{
-        console.log(e.content);
-    });
   return (
     <div>
       <Head>
@@ -40,7 +14,30 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Container cols={cols_temp} rows={rows_temp}></Container>
+        <Container cols={[{
+                centered: true,
+                content: <div className="min-w-full">
+                            <h1>Title</h1>
+                            <hr />
+                            <a href="https://google.ca">Google.ca</a>
+                        </div>
+            },
+            {
+                centered: true,
+                content: <div className="min-w-full">
+                            <h1>Title</h1>
+                            <hr />
+                            <a href="https://google.ca">Google.ca</a>
+                        </div>
+            },
+            {
+                centered: true,
+                content: "hello"
+            },
+            {
+                centered: true,
+                content: "hello"
+            }]}></Container>
       </main>
 
       <footer>
