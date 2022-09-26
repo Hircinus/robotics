@@ -14,17 +14,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Container cols={[{
+        <Container isHero={true} cols={[{
                 centered: true,
-                content: <div className="min-w-full">
-                            <h1>Title</h1>
+                content: <div className="min-w-full min-h-full">
+                            <h1 className="text-3xl">Title</h1>
                             <hr />
                             <a href="https://google.ca">Google.ca</a>
                         </div>
             },
             {
                 centered: true,
-                content: <div className="min-w-full">
+                content: <div className="min-w-full min-h-full">
                             <h1>Title</h1>
                             <hr />
                             <a href="https://google.ca">Google.ca</a>
