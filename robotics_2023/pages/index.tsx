@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Container from "./components/Container";
+import Col from "./components/Col";
 
 const Home: NextPage = () => {
   return (
@@ -14,9 +15,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Container isHero={true} cols={[{
+        <Container gap={6} isHero={true} cols={[{
                 centered: true,
-                content: <div className="min-w-full min-h-full">
+                content: <div>
                             <h1 className="text-3xl">Title</h1>
                             <hr />
                             <a href="https://google.ca">Google.ca</a>
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
             },
             {
                 centered: true,
-                content: <div className="min-w-full min-h-full">
+                content: <div className="">
                             <h1>Title</h1>
                             <hr />
                             <a href="https://google.ca">Google.ca</a>

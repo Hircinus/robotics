@@ -1,9 +1,11 @@
 import Col from "./Col";
+import {string} from "prop-types";
 
 const Row = (props:any) => {
-    return <div className={"grid justify-content-center grid-cols-1 gap-6 md:grid-cols-"+(props.cols.length/2)+" lg:grid-cols-"+props.cols.length}>
+    let names : string = (props.cols.length>0) ? 'lg:grid-cols-' + props.cols.length + ' md:grid-cols-' + (props.cols.length/2) + ' grid-cols-1 grid gap-' + props.gap : 'grid-cols-1 grid'
+    return <div className={names}>
         {props.cols.map((c:any)=>(
-            <Col count={props.cols.length} centered={c.centered} content={c.content}></Col>
+            <Col key={c.index} centered={c.centered} content={c.content}></Col>
         ))}
     </div>;
 }
