@@ -1,7 +1,35 @@
-## Grids
+# Champlain College St-Lambert 2023 Robotics club website
+
+## Installation
+
+ 1. Clone the project to a desired location (using GUI or CLI): ``git clone https://github.com/Hircinus/robotics.git``
+ 2. Move to the desired project in the repo (for example, choosing this project): ``cd robotics_2023``
+ 3. Install NPM dependencies: ``npm install && npm install -D tailwindcss postcss autoprefixer``
+ 4. The config file (``tailwind.config.js``) should be already complete, but if it is not found or lost, run: ``npx tailwindcss init -p`` and change the contents to:
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+    },
+  },
+  plugins: [],
+}
+```
+ 5. Finally, run the project with: ``npm run dev`` and open it at [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the main page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+## Usage
+
+### Grids
 To use the grid component, you need to pass a column parameter.
 ```typescript
-let cols_temp = [
+<Container cols={[
     {
         centered: true,
         content: <div>
@@ -10,25 +38,9 @@ let cols_temp = [
             <a href="http://linkexample">dummylink</a>
         </div>
     }
-]
+]}></Container>
 ```
 Here you pass not only a centered parameter, but also a content parameter that is returning the html content of the grid component.
-
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
 
 ## Learn More
 
