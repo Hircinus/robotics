@@ -1,8 +1,13 @@
+import { FC } from "react";
 import Row from "./Row";
-
-const Container = (props:any) => {
-    return <div className={"container mx-auto " + (props.isHero ? "mt-10" : "")}>
-            <Row cols={props.cols} gap={props.gap} centered={props.centered} content={props.content}></Row>
+type props = {
+    gap:Number,
+    cols:{centered:Boolean, content:JSX.Element}[],
+    isHero: Boolean
+}
+const Container:FC<props> = ({gap, cols, isHero}) => {
+    return <div className={"container mx-auto " + (isHero ? "mt-10" : "")}>
+            <Row cols={cols} gap={gap}></Row>
     </div>;
 }
 
